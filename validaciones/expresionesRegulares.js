@@ -58,26 +58,28 @@ formulario.addEventListener("submit", function(event) {
     
     var flag2 = 0;
 
-    validacionPassword();
+    console.log(emailisito);
+    console.log(password);
 
-console.log(emailisito);
-console.log(password);
-
-
-    if (emailisito.match(emailRegex)) {
-        flag2++;
-    } else {
-        event.preventDefault();
-        alert('Formato de email invalido');
-
-    }     
-
-    if (flag == 5 && flag2 == 1) {
+    if (emailisito === '' && password === '') {
         formulario.submit();
     } else {
-        event.preventDefault();
+        validacionPassword();
+        if (emailisito.match(emailRegex)) {
+            flag2++;
+        } else {
+            event.preventDefault();
+            alert('Formato de email invalido');
+    
+        }     
+    
+        if (flag == 5 && flag2 == 1) {
+            formulario.submit();
+        } else {
+            event.preventDefault();
+        }
+        
     }
-
 
 });
 })
