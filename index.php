@@ -1,3 +1,14 @@
+<?php 
+
+if (isset($_SESSION['administrador']) || isset($_SESSION['regularUser'])) {
+    @session_start();
+    session_destroy();
+    header('Location: index.php');
+    die;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
