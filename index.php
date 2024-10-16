@@ -45,15 +45,15 @@ $stmt->close();
  ?>
 
 
-    <h1 class="text-center titlee">HOME</h1>
-    <h2 class="text-center">Ultima publicacion</h2>
+    
+    <h1 class="text-center">Ultima publicacion</h1>
 
 
 
     <div class="container">
         <div class="row">
             <div class="text-center">
-                <footer class="fs-2"> <?php echo $filaN->titulo ?></footer>
+                <footer class="fs-2"> "<?php echo $filaN->titulo ?>"</footer>
                 <div><a href="<?php echo 'view/forum/publicacion.php?id='.$id.'&publicacion='.$latestID ?>">Ver mas</a></div>
                 <img class="img-thumbnail rounded col-10 text-center" height="500px" src="https://www.cronista.com/files/image/792/792559/66217a2f9fe51.jpg" alt="Imagen no disponible">
             </div>
