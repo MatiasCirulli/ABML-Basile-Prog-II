@@ -8,7 +8,7 @@ if (!isset($_SESSION['administrador'])){
 };
 
 
-require_once('includes/dbasile.php');
+require_once('../includes/dbasile.php');
 
 
 $stmt = $conx->prepare('SELECT * FROM users');
@@ -27,7 +27,7 @@ $stmt->close();
 
 ?>
 
-<?php include_once('includes/botonVolver.php'); ?>
+<?php include_once('../includes/botonVolver.php'); ?>
 
 <table border="1px">
      <thead>
@@ -44,13 +44,13 @@ $stmt->close();
                     <td><?php echo $fila->email ?></td>
                     <td><?php echo $fila->rango ?> </td>
                     <td><?php if($_SESSION['rank'] == 1){if ($fila->rango > 1) { ?>
-                        <?php include('includes/formLevelUp.php') ?> 
+                        <?php include('../includes/formLevelUp.php') ?> 
                     </td>
-                    <td> <?php include('includes/formDelete.php') ?></td>
+                    <td> <?php include('../includes/formDelete.php') ?></td>
                         </form> <?php } } else if($_SESSION['rank'] == 2) { if ($fila->rango > 2) { ?>
-                        <?php include('includes/formLevelUp.php') ?> 
+                        <?php include('../includes/formLevelUp.php') ?> 
                     </td>
-                    <td> <?php include('includes/formDelete.php') ?></td> 
+                    <td> <?php include('../includes/formDelete.php') ?></td> 
                         </form> <?php } } ?> 
                 </tr>
             <?php } ?>

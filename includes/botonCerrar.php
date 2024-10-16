@@ -10,7 +10,7 @@ $envio = isset($_GET['envio']) ? $_GET['envio'] : 0;
 if ($envio == 1) {
 @session_start();
 session_destroy();
-header('Location: ../loginBasile/index.php');
+header('Location: http://localhost/Programaci%C3%B3n/loginBasile/index.php');
 die;
 }
 ?>

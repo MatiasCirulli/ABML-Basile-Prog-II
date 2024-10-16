@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', function(){
 
+var username = document.getElementById('usuario');
 var contra = document.getElementById('contra');
 var email = document.getElementById('name');
 const formulario = document.getElementById('form');
@@ -11,7 +12,6 @@ const oneLetterMayus = /^(?=.*[A-Z]).{0,}$/
 const specialChara = /^(?=.*[@$!%*#?&]).{0,}$/;
 const number = /^(?=.*\d).{0,}$/;
 const eightChara = /^.{8,}$/;
-
 
 
 var flag = 0;
@@ -36,13 +36,13 @@ function validacionPassword() {
     } else {
         alert('Su contraseña debe contener minimo 8 caracteres');
     }
-     
+    /* 
     if (password.match(specialChara)) {
         flag++;
     } else {
         alert('Su contraseña debe contener minimo un caracter special');
     }
-     
+    */
     if (password.match(number)) {
         flag++;
     } else {
@@ -58,6 +58,7 @@ formulario.addEventListener("submit", function(event) {
     
     var flag2 = 0;
 
+    console.log(username);
     console.log(emailisito);
     console.log(password);
 
@@ -73,13 +74,17 @@ formulario.addEventListener("submit", function(event) {
     
         }     
     
-        if (flag == 5 && flag2 == 1) {
-            formulario.submit();
-        } else {
-            event.preventDefault();
-        }
+
+            if (flag == 4 && flag2 == 1) {
+                formulario.submit();
+            } else {
+                event.preventDefault();
+            }
+
+        
         
     }
+
 
 });
 })

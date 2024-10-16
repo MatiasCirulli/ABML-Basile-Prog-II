@@ -11,38 +11,42 @@ $stmt->execute();
 
 $resultadoSTMT = $stmt->get_result();
 
+
 if ($resultadoSTMT) {
     $fila = $resultadoSTMT->fetch_object();
     if ($fila->rango == 1){
         session_start();
         $_SESSION['administrador'] = $email;
         $_SESSION['rank'] = 1;
-        header('Location: ../Privado.php');
+        $id = $fila->id;
+        header('Location: ../index.php?id='.$id);
         exit;    
     } else if ($fila->rango == 2){
         session_start();
         $_SESSION['administrador'] = $email;
         $_SESSION['rank'] = 2;
-        header('Location: ../Privado.php');
+        $id = $fila->id;
+        header('Location: ../index.php?id='.$id);
         exit;    
     } else if ($fila->rango == 99) {
         session_start();
         $_SESSION['regularUser'] = $email;
-        header('Location: ../publico.php');
+        $id = $fila->id;
+        header('Location: ../index.php?id='.$id);
         exit;
     } else {
-        header('Location: ../index.php?error=1');
+        header('Location: ../view/loginRegister/login.php?error=1');
         exit;
     }
 } 
 
-$nuestroResultado = [];
+#$nuestroResultado = [];
 
 /*while (){
     $nuestroResultado[] = $fila;
 }*/
 
-print_r($nuestroResultado);
+#print_r($nuestroResultado);
 
 //($nuestroResultado['rango'] == 1)
 

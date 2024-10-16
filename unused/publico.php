@@ -3,7 +3,7 @@
 session_start();
 
 if (!isset($_SESSION['regularUser']) && !isset($_SESSION['administrador'])){
-    header('Location: index.php');
+    header('Location: ../index.php');
     exit;
 };
 
@@ -24,7 +24,7 @@ $newEmail = isset($_POST['email']) ? $_POST['email'] : '';
 $newPassword = isset($_POST['password']) ? $_POST['password'] : '';
 $envioForm = isset($_POST['envioForm']) ? $_POST['envioForm'] : 0;
 
-require_once('includes/dbasile.php');
+require_once('../includes/dbasile.php');
 
 $sql = 'SELECT * FROM users WHERE email = ?';
 $stmt = $conx->prepare($sql);
@@ -83,8 +83,8 @@ if ($envioForm == 1) {
     </tbody>
 </table>
 
-<?php include_once('includes/botonCerrar.php'); ?>
-<script src="validaciones/expresionesRegulares.js"></script>
+<?php include_once('../includes/botonCerrar.php'); ?>
+<script src="../validaciones/expresionesRegulares.js"></script>
 <?php if ($envioForm == 1) {
     echo '<b>Sus datos han sido actualizados<b/>';
 }

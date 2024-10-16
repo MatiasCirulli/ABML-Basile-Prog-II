@@ -7,7 +7,7 @@
 $vuelta = isset($_GET['vuelta']) ? $_GET['vuelta'] : 0;
 
 if ($vuelta == 1) {
-    header('Location: Privado.php');
+    header('Location: login.php');
     die;
 }
 ?>
