@@ -51,7 +51,12 @@ while ($filaN = $resultadoSTMT->fetch_object()){
         <img class="card-img-top" width="250" height="250" src="https://www.cronista.com/files/image/792/792559/66217a2f9fe51.jpg" alt="...">
         <div class="card-body ">
           <h5 class="card-title"> <?php echo $filaN->titulo ?> </h5>
-          <p class="texto-foro" ><?php echo $filaN->descripcion ?></p>
+          <p style="
+          display:inline-block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 20ch;">  <?php echo $filaN->descripcion ?></p>
           <a href="<?php echo 'publicacion.php?id='.$id.'&publicacion='.$filaN->id ?>" class="btn btn-primary">Ir a publicacion</a>
         </div>
       </div>
