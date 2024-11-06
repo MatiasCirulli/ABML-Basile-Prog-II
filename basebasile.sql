@@ -95,7 +95,7 @@ INSERT INTO `noticias` (`id`, `id_user`, `id_categoria`, `titulo`, `descripcion`
 (3, 1, 5, 'Finalmente, hay imagen', 'Finalmente las publicaciones de este sitio tienen imagenes, muy complicado no era alfnal, deberia haber tardado menos esta funcion, es una verguenza', 'http://localhost/Programaci%C3%B3n/loginBasile/validaciones/../uploads/2024-11-03-12-46-32concept-of-loneliness-and-disappointment-in-love-sad-man-sitting-element-of-the-picture-is-decorated-by-nasa-free-photo.jpg', 0, '2024-11-03-12-46-32'),
 (4, 19, 5, 'Hola soy Frederick', 'Me llamo Frederick', 'http://localhost/Programaci%C3%B3n/loginBasile/validaciones/../uploads/2024-11-05-02-31-49Frederick-Douglass.webp', 0, '2024-11-05-02-31-49'),
 (5, 22, 4, 'El inexistente', 'Había una vez, un sujeto condenado a no existir, cuya vida fue fugaz y tan solo duro unos minutos. Esta persona tenia un nombre y cara pero nadie llego a conocerlo, ni siquiera sus propios padres, porque simplemente, no se le permitió existir', 'http://localhost/Programaci%C3%B3n/loginBasile/validaciones/../uploads/2024-11-05-03-37-28HQOP4HGMUFHH3AY244WPPAH5UY.jpg', 0, '2024-11-05-03-37-28'),
-(6, 16, 3, 'El inicio de todo', 'El universo comenzó con una explosión y esta destinado a terminar por otra', 'http://localhost/Programaci%C3%B3n/loginBasile/validaciones/../uploads/2024-11-06-02-58-10360_F_580971891_nSpUhtdqQh2tyA8fDNkB8s91NZEwqb2f.jpg', 0, '2024-11-06-02-58-10');
+(6, 16, 3, 'Explosion', 'El universo comenzó con una explosión y esta destinado a terminar por otra', 'http://localhost/Programaci%C3%B3n/loginBasile/validaciones/../uploads/2024-11-06-02-58-10360_F_580971891_nSpUhtdqQh2tyA8fDNkB8s91NZEwqb2f.jpg', 0, '2024-11-06-02-58-10');
 
 -- --------------------------------------------------------
 
