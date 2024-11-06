@@ -107,3 +107,12 @@ nav {
   text-overflow: ellipsis;
   max-width: 13ch;
 }
+
+.estrella {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    top: 47%;
+    left: 58%;
+}
+

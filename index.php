@@ -24,9 +24,9 @@ date_default_timezone_set('America/Argentina/Buenos_Aires');
 $fechaActual = new DateTime(date('Y-m-d h:i:s'));
 
 while ($filaDate = $stmtRes->fetch_object()){
-    $fechaPubli = new DateTime($filaDate->fecha_creacion);
+    #$fechaPubli = new DateTime($filaDate->fecha_creacion);
     
-    $results[] = $fechaActual->getTimestamp() - $fechaPubli->getTimestamp();
+    #$results[] = $fechaActual->getTimestamp() - $fechaPubli->getTimestamp();
 
     $latestID = $filaDate->id; //relamente lo otro esta alpedo
 
@@ -55,7 +55,7 @@ $stmt->close();
             <div class="text-center">
                 <footer class="fs-2"> "<?php echo $filaN->titulo ?>"</footer>
                 <div><a href="<?php echo 'view/forum/publicacion.php?id='.$id.'&publicacion='.$latestID ?>">Ver mas</a></div>
-                <img class="img-thumbnail rounded col-10 text-center" height="500px" src="https://www.cronista.com/files/image/792/792559/66217a2f9fe51.jpg" alt="Imagen no disponible">
+                <img class="img-thumbnail rounded col-10 text-center" height="500px" src=" <?php echo $filaN->imagen ?>" alt="Imagen no disponible">
             </div>
         </div>
     </div>

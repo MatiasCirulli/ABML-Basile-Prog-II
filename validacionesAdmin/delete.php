@@ -2,22 +2,17 @@
 
 session_start();
 
-if (!isset($_SESSION['administrador'])){
-    header('Location: ../index.php');
-    exit;
-};
-
 require_once('../includes/dbasile.php');
 
-$email = isset($_POST['emailDelete']) ? $_POST['emailDelete'] : '';
+#$email = isset($_POST['emailDelete']) ? $_POST['emailDelete'] : '';
 $x = isset($_POST['borrar']) ? $_POST['borrar'] : 0;
 
-if ($x == 1) {
-    $sql = 'DELETE FROM users WHERE email = ?';
+if (!empty($x)) {
+    $sql = 'DELETE FROM noticias WHERE id = ?';
     $stmt = $conx->prepare($sql); 
-    $stmt->bind_param('s', $email);
+    $stmt->bind_param('i', $x);
     $stmt->execute();
     $stmt->close();
 }
-header('Location: ../listadoAdmin.php');
+header('Location: http://localhost/Programaci%C3%B3n/loginBasile/view/forum/foro.php?id='.$_SESSION['id']);
 die;

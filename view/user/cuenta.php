@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php 
+session_start();
+$cuenta = isset($_GET['cuenta']) ? $_GET['cuenta'] : 0;
+
+?>
 
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
@@ -10,21 +14,35 @@
     <title>Account</title>
 </head>
 <body>
-    <div> <?php include_once('../../includes/navbar.php') ?></div>
+    <div> 
+    <?php 
+    include_once('../../includes/navbar.php'); 
+    if($cuenta == 0 || $actualUser === false) {
+        header('Location: http://localhost/Programaci%C3%B3n/loginBasile/index.php?id='.$id);
+    }
+    ?>
+    </div>
     
 
     <div class="fondo_de_perfil_div">
         <div class="fondo_de_perfil_img">
-            <img class="fondo_de_perfil" src="<?php echo $fila2->background ?>" alt="Imagen no disponible">
+            <img class="fondo_de_perfil" src="<?php echo $fila4->background ?>" alt="Imagen no disponible">
         </div>
     </div>
-    <div class="text-center"><img class="rounded-circle icono" src="<?php echo $fila2->profile_pic ?>" alt=""></div>
+    <div class="text-center"><img class="rounded-circle icono" src="<?php echo $fila4->profile_pic ?>" alt=""></div>
+
+    <?php if($fila3->rango < 99 && $fila3->rango > 0) { ?>
+    <div><img class="estrella" src="../../uploads/Admin-Star.png" alt=""></div>
+    <?php } ?>
+
+    <div class="text-center fs-1 fw-bold"> <?php echo $fila3->username ?> </div>
+    
+    <!--<?php #if ?>
+
+    <h1 class="text-center m-5">Publicacion mas popular</h1>
     
     <?php #if ?>
-    <h1 class="text-center">Publicacion mas popular</h1>
-    
-    <?php #if ?>
-    <h1 class="text-center">Ultima publicacion</h1>
+    <h1 class="text-center m-5">Ultima publicacion</h1>-->
 
 </body>
 </html>

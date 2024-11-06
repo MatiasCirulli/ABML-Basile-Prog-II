@@ -2,12 +2,13 @@
 
 require_once('../includes/dbasile.php');
 
+
 $envioForm = isset($_POST['envio_form']) ? $_POST['envio_form'] : 0;
 $id = isset($_GET['id']) ? $_GET['id'] : 0;
 $carpetaUploads = '../uploads/';
 
 date_default_timezone_set('America/Argentina/Buenos_Aires');
-$fechaActual = date('Y-m-d h:i:s');
+$fechaActual = date('Y-m-d-h-i-s');
 
 
 if ($envioForm == '2') {
@@ -43,6 +44,8 @@ if ($envioForm == '2') {
             $stmt->bind_param('si', $rutaFinalDB, $id);
             $stmt->execute();
             $stmt->close();
+            header('Location : http://localhost/Programaci%C3%B3n/loginBasile/view/user/change.php?'.$id);
+            
         }
     }
 
@@ -52,7 +55,7 @@ if ($envioForm == '2') {
 
 if ($envioForm == '3') {
     $rutaFinal = $carpetaUploads.$fechaActual.$_FILES['icono']['name'];
-    $rutaFinalDB = 'http://localhost/Programaci%C3%B3n/loginBasile/validaciones/'.$rutaFinal;
+    $rutaFinalDB = 'http://localhost/Programaci%C3%B3n/loginBasile'.$rutaFinal;
 
     $mimeType = mime_content_type($_FILES['icono']['tmp_name']);
     $mimeFlag = 0;
@@ -82,6 +85,8 @@ if ($envioForm == '3') {
             $stmt->bind_param('si', $rutaFinalDB, $id);
             $stmt->execute();
             $stmt->close();
+            header('Location : http://localhost/Programaci%C3%B3n/loginBasile/view/user/change.php?'.$id);
+            
         }
     }
 

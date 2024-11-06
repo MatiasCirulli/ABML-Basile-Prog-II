@@ -1,5 +1,6 @@
 <?php $id = isset($_GET['id']) ? $_GET['id'] : 0; ?>
-<?php require_once('userdata.php'); ?>
+<?php require('userdata.php'); ?>
+
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,14 +36,18 @@
         
     </ul>
 
-    <?php if(isset($_SESSION['regularUser']) || isset($_SESSION['administrador'])) {?>
+    <?php if(isset($_SESSION['regularUser']) || isset($_SESSION['administrador']) && $id != '0') {?>
+
+      <?php if ($id != $_SESSION['id']) {
+        header('Location: http://localhost/Programaci%C3%B3n/loginBasile/includes/botonCerrar.php?envio=1');
+      } ?>
 
         <div class="dropdown px-5">
     <a class="nav-link dropdown-toggle" href='#' role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <img class="rounded-circle" height="50" width="50" alt="wo" src=" <?php echo $fila2->profile_pic ?>"/>  
     </a>
     <ul class="nav-item dropdown-menu">
-        <li><a class="dropdown-item" href= <?php echo "http://localhost/Programaci%C3%B3n/loginBasile/view/user/cuenta.php?id=".$id ?>>Tu perfil</a></li>
+        <li><a class="dropdown-item" href= <?php echo "http://localhost/Programaci%C3%B3n/loginBasile/view/user/cuenta.php?id=".$id."&cuenta=".$id ?>>Tu perfil</a></li>
         <li><a class="dropdown-item" href= <?php echo "http://localhost/Programaci%C3%B3n/loginBasile/view/user/change.php?id=".$id ?>>Administrar perfil</a></li>
         <li><a class="dropdown-item" href="http://localhost/Programaci%C3%B3n/loginBasile/includes/botonCerrar.php?envio=1">Cerrar sesión</a></li>
     </ul>

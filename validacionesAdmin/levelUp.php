@@ -1,5 +1,5 @@
 <?php
-
+#actualmente sin uso
 session_start();
 
 if (!isset($_SESSION['administrador'])){

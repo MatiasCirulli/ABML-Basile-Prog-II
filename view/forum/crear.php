@@ -11,10 +11,17 @@
 </head>
 <body>
     
-    <?php include_once('../../includes/navbar.php') ?>
+    <?php 
+    include_once('../../includes/navbar.php');
+    $error = isset($_GET['e']) ? $_GET['e'] : 0;
+
+    if ($error == 1) { ?>
+    <div class="text-bg-danger bd-red-300 text-center fs-3">Porfavor complete todos los campos</div>
+    <?php }?>
+
 
     
-    <form class="m-4" method="POST" action="<?php echo "../../validaciones/creating.php?id=".$id ?>">
+    <form enctype="multipart/form-data" class="m-4" method="POST" action="<?php echo "../../validaciones/creating.php?id=".$id ?>">
         <input type="hidden" value='1' name="envio_form">
         <div class="from-group px-5 m-2">
             <label class="fs-4">Titulo de la publicacion</label>    
@@ -26,7 +33,7 @@
         </div>
         <div class="from-group px-5 m-2">
             <label class="fs-4">Imagen</label>
-            <input class='form-control' type="file" name="image">
+            <input class='form-control' type="file" name="imagen">
         </div>
         <div class="form-group px-5 m-2">
             <label class="fs-4" for="categorias">Categorias: </label>

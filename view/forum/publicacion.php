@@ -50,16 +50,26 @@ $stmt->close();
     
     ?>
 
-    <img width="45px" height="45px" src="<?php echo $filaC->profile_pic ?>" alt="">
-    <b class="rounded-circle fs-3"> <?php echo $filaN->username; ?></b>
+    <img class='rounded-circle' width="45px" height="45px" src="<?php echo $filaC->profile_pic ?>" alt="">
+    <b class="fs-3"> <?php echo $filaN->username; ?></b>
+    <?php if($filaN->rango < 99 && $filaN->rango > 0) { ?>
+        <img src="../../uploads/Admin-Star.png" alt="" width='30px' height="30px">
+    <?php } ?>
+
+
 
     <div class="container">
         <h1 class="text-center"> <?php echo $filaN->titulo ; ?></h1>
         <div class="badge bg-primary"> <?php echo $filaN->tipo ?> </div>
-        <img class=' rounded' width="100%" height="500px" src='https://www.cronista.com/files/image/792/792559/66217a2f9fe51.jpg' alt="...">
-        <h4> <?php echo $filaN->descripcion ?> </h4>
+        <img class=' rounded' width="100%" height="500px" src='<?php echo $filaN->imagen ?>' alt="...">
+        <h4 class="m-3"> <?php echo $filaN->descripcion ?> </h4>
     </div>
 
-
+    <?php if (isset($_SESSION['administrador']) || $id_author == $id) { ?>
+        <form method="POST" action="../../validacionesAdmin/delete.php">
+            <input type="hidden" name="borrar" value=" <?php echo $idPubli ?> ">
+            <input type="submit" class="m-3 btn btn-outline-danger" value="Eliminar publicacion">
+        </form>
+    <?php } ?>
 </body>
 </html>

@@ -18,27 +18,27 @@ session_start();
 <body>
     <?php include_once('../../includes/navbar.php'); ?>
 
-<form enctype="multipart/form-data" method="POST" action=' <?php echo "../../validaciones/changing.php?id=".$id ?>' id="form">
+<form enctype="multipart/form-data" method="POST" action='<?php echo "../../validaciones/changing.php?id=".$id ?>' id="form">
     <input type="hidden" value='2' name="envio_form">
     <div class="fondo_de_perfil_div">
         <label for="input-file">
         <div class="fondo_de_perfil_img_2 form-group">
-            <img class="fondo_de_perfil" src="<?php echo $fila2->background ?>" alt="Imagen no disponible">
+            <img class="fondo_de_perfil" style="object-fit: cover;"  src="<?php echo $fila2->background ?>" alt="Imagen no disponible">
             <input type="file" id="input-file" name="fondo">
         </div>
-        <input type="submit" value="cd">
+        <input type="submit" value="Confirmar cambios" class="btn btn-outline-warning">
         </label>
     </div>
 </form>
 
-<form enctype="multipart/form-data" method="POST" action=' <?php echo "../../validaciones/changing.php?id=".$id ?>' id="form">
+<form enctype="multipart/form-data" method="POST" action='<?php echo "../../validaciones/changing.php?id=".$id ?>' id="form2">
     <input type="hidden" value='3' name="envio_form">
     <div class="form-group text-center">
-        <label for="input-file">
+        <label for="input-file-2">
+            <input type="submit" style="position: absolute; top: 50%;left: 53%;" value="Confirmar cambios" class="m-2 btn btn-outline-warning">
             <img class="icono-dos rounded-circle" src="<?php echo $fila2->profile_pic ?>" alt="">
-            <input type="submit">
         </label>
-        <input type="file" id="input-file" name="icono">
+        <input type="file" id="input-file-2" name="icono">
     </div>
 </form>
     
